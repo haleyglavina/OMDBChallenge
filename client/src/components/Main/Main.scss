@@ -1,0 +1,15 @@
+.movie-listings {
+  display: flex;
+}
+
+.section {
+  &__container {
+    background-color: lightgray;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+
+  &__title {
+
+  }
+}
