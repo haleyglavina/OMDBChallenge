@@ -12,6 +12,7 @@ function Nominations({currNoms, removeNomination}) {
           <li key={uuid()}>
             <Movie 
               movie={movie} 
+              clickHandler={removeNomination}
             />
           </li>
         )}

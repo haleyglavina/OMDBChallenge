@@ -6,7 +6,8 @@ import Nominations from '../Nominations/Nominations';
 
 function Main() {
   // Declare state
-  let movieLi = [
+  const [currNoms, setCurrNoms] = useState([]);
+  const [movieLi, setMovieLi] = useState([
     {
         "Title": "Hey Ram",
         "Year": "2000",
@@ -77,10 +78,7 @@ function Main() {
         "Type": "movie",
         "Poster": "https://m.media-amazon.com/images/M/MV5BMTVlMDZiZTItMDRjZC00MGViLTljNWYtODg2YTNkYjUyMTcxXkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_SX300.jpg"
     }
-  ];
-
-  const [currNoms, setCurrNoms] = useState([]);
-  //const [movieLi, setMovieLi] = useState([]);
+  ]);
   const [searchInput, setSearchInput] = useState("");
 
   // State handlers
@@ -94,17 +92,28 @@ function Main() {
       (nom.Title !== movie.Title) && (nom.Year !== movie.Year)
     ));
   }
+
+  const handleSearchChange = (input) => { 
+    setSearchInput(input);
+    setMovieLi(movieLi.filter(movie => {
+      console.log(`Is "${input}" in "${movie.Title}"? ${movie.Title.includes(input)}`)
+      return movie.Title.toLowerCase().includes(input)
+    }));
+  }
+
+
   
   return (
     <main>
       <h1 className="page-title">The Shoppies</h1>
-      <Search setSearchInput={setSearchInput}/>
+      <Search handleSearchChange={handleSearchChange}/>
       <div className="movie-listings">
         <Results 
           searchInput={searchInput} 
           currNoms={currNoms} 
           addNomination={addNomination}
           movieLi={movieLi}
+          setMovieLi={setMovieLi}
         />
         <Nominations 
           currNoms={currNoms}

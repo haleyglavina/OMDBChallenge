@@ -1,7 +1,7 @@
 import React from 'react';
 import './Search.scss';
 
-function Search({setSearchInput}) {
+function Search({handleSearchChange}) {
   return (
     <div className="section__container">
       <form className="search__form">
@@ -11,8 +11,9 @@ function Search({setSearchInput}) {
             className="search__input" 
             type="text" 
             id="movie-search" 
-            name="movie-search" 
-            onChange={e => setSearchInput(e.target.value)}
+            name="movie-search"
+            autoComplete="off" 
+            onChange={e => handleSearchChange(e.target.value)}
           ></input>
         </div>
       </form>

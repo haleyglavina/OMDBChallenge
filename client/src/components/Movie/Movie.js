@@ -8,7 +8,7 @@ function Movie({movie, currNoms, clickHandler}) {
     return (
       <div className="movie">
       <p className="movie__text">{`${movie.Title} (${movie.Year})`}</p>
-      <button className="btn" onClick={(movie) => console.log("remove")}>Remove</button>
+      <button className="btn" onClick={() => clickHandler(movie)}>Remove</button>
     </div>
     );
   }
