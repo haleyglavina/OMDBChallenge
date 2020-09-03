@@ -5,7 +5,7 @@ function Search({searchChanged}) {
   return (
     <div className="section__container">
       <form className="search__form">
-        <label className="search__label" for="movie-search">Movie Title</label>
+        <label className="search__label" htmlFor="movie-search">Movie Title</label>
         <div className="search__input-box">
           <input 
             className="search__input" 

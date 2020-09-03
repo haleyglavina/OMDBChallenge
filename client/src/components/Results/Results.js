@@ -1,6 +1,7 @@
 import React from 'react';
 import './Results.scss';
 import Movie from '../Movie/Movie';
+import {v4 as uuid} from 'uuid';
 
 let movieLi = [
   {
@@ -75,13 +76,13 @@ let movieLi = [
   }
 ];
 
-function Results({searchInput}) {
+function Results({searchInput, currNoms}) {
   return (
     <div className="section__container">
       <h2 className="section__title">{`Results for "${searchInput}"`}</h2>
       <ul className="results__ul">
         {movieLi.map(movie => 
-          <li><Movie movie={movie} /></li>
+          <li key={uuid()}><Movie movie={movie} currNoms={currNoms}/></li>
         )}
       </ul>
     </div>
