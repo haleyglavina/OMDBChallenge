@@ -1,21 +1,33 @@
 import React from 'react';
 import './Movie.scss';
 
-function Movie({movie, currNoms}) {
-  console.log("currNoms:",currNoms)
-  console.log("movie in currNoms?", currNoms.filter(nom => (nom.Title === movie.Title) && (nom.Year === movie.Year)).length)
+function Movie({movie, currNoms, clickHandler}) {
+
+  // Movie in nominations section
+  if (!currNoms) {
+    return (
+      <div className="movie">
+      <p className="movie__text">{`${movie.Title} (${movie.Year})`}</p>
+      <button className="btn" onClick={(movie) => console.log("remove")}>Remove</button>
+    </div>
+    );
+  }
+  
+  // Movie in Results section
+  const inNominations = () => {
+    // Check if movie object is in current nominations list
+    return currNoms.filter(nom => (nom.Title === movie.Title) && (nom.Year === movie.Year)).length
+  }
+
   return (
     <div className="movie">
       <p className="movie__text">{`${movie.Title} (${movie.Year})`}</p>
-      {// Check if movie object is in current nominations list
-        currNoms.filter(nom => (nom.Title === movie.Title) && (nom.Year === movie.Year)).length
+      {inNominations()
         ? <button className="btn btn--inactive" disabled>Nominate</button>
-        : <button className="btn" onClick={() => console.log("nominate!")}>Nominate</button>
+        : <button className="btn" onClick={() => clickHandler(movie)}>Nominate</button>
       }
     </div>
   );
 }
 
 export default Movie;
-
-// <button className={`btn ${currNoms.includes(movie) ? "btn--inactive" : null}`} >Nominate</button>

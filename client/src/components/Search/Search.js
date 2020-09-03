@@ -1,7 +1,7 @@
 import React from 'react';
 import './Search.scss';
 
-function Search({searchChanged}) {
+function Search({setSearchInput}) {
   return (
     <div className="section__container">
       <form className="search__form">
@@ -12,7 +12,7 @@ function Search({searchChanged}) {
             type="text" 
             id="movie-search" 
             name="movie-search" 
-            onChange={e => searchChanged(e.target.value)}
+            onChange={e => setSearchInput(e.target.value)}
           ></input>
         </div>
       </form>
