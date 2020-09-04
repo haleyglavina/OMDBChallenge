@@ -5,7 +5,7 @@ import {v4 as uuid} from 'uuid';
 
 function Nominations({currNoms, removeNomination}) {
   return (
-    <div className="section__container">
+    <div className="section__container section__container--noms">
       <h2 className="section__title">Nominations</h2>
       <ul className="noms__ul">
         {currNoms.map(movie => 

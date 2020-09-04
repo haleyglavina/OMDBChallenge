@@ -7,6 +7,16 @@ function Results({searchInput, currNoms, addNomination, movieLi, setMovieLi}) {
 
   //setMovieLi(searchInput ? movieLi.filter(movie => movie.Title.includes(searchInput)) : []);
   //console.log("movieLi:", movieLi);
+  if (!movieLi) {
+    return (
+      <div className="section__container">
+      <h2 className="section__title">{`Results for "${searchInput}"`}</h2>
+      <p className="section__caption">Please search for a title.</p>
+    </div>
+    )
+  }
+    
+
   return (
     <div className="section__container">
       <h2 className="section__title">{`Results for "${searchInput}"`}</h2>
