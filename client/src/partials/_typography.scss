@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import './variables';
+
+h1 {
+  font-family: $accent-font, cursive;
+  color: $accent-one;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: $accent-font, cursive;
+  letter-spacing: 1.5px;
+  color: $main-bg;
+}

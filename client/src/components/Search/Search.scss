@@ -4,18 +4,29 @@
 
 .search {
   &__form {
-
-  }
-
-  &__label {
-
+    width: 100%;
   }
 
   &__input-box {
+    position: relative;
 
+    &::before {
+      content: url('../../assets/Icon-search.svg');
+      position: absolute;
+      top: 13px;
+      left: 14px;
+    }
   }
 
   &__input {
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    border-radius: $big-radius;
+    font-size: 1rem;
+    width: 100%;
 
+    &:focus {
+      outline: none;
+      border: 2px solid $accent-two;
+    }
   }
 }

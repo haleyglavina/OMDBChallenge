@@ -9,11 +9,12 @@ function Nominations({currNoms, removeNomination}) {
       <h2 className="section__title">Nominations</h2>
       <ul className="noms__ul">
         {currNoms.map(movie => 
-          <li key={uuid()}>
+          <li className="noms__li" key={uuid()}>
             <Movie 
               movie={movie} 
               clickHandler={removeNomination}
             />
+            <img className="noms__poster" src={movie.Poster} alt={movie.Title} />
           </li>
         )}
       </ul>

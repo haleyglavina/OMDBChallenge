@@ -33,21 +33,25 @@ function Main() {
 
   
   return (
-    <main>
-      <h1 className="page-title">The Shoppies</h1>
-      <Search handleSearchChange={handleSearchChange}/>
-      <div className="movie-listings">
-        <Results 
-          searchInput={searchInput} 
-          currNoms={currNoms} 
-          addNomination={addNomination}
-          movieLi={movieLi}
-          setMovieLi={setMovieLi}
-        />
-        <Nominations 
-          currNoms={currNoms}
-          removeNomination={removeNomination}
-        />
+    <main className="main">
+      <div className="main__content">
+        <h1 className="main__title">The Shoppies.</h1>
+        <div className="main__top-bar">
+          <Search handleSearchChange={handleSearchChange}/>
+        </div>
+        <div className="main__sections">
+          <Results 
+            searchInput={searchInput} 
+            currNoms={currNoms} 
+            addNomination={addNomination}
+            movieLi={movieLi}
+            setMovieLi={setMovieLi}
+          />
+          <Nominations 
+            currNoms={currNoms}
+            removeNomination={removeNomination}
+          />
+        </div>
       </div>
     </main>
   );

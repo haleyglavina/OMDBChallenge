@@ -1,7 +1,41 @@
+@import '../../partials/variables';
+
 .btn {
-  background-color: lightgreen;
+  background-color: $accent-one;
+  color: $main-bg;
+  border: 1px solid $accent-two;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border-radius: $big-radius;
+
+  &:hover {
+    background-color: $main-bg;
+    color: $section-bg;
+    border-color: $main-bg;
+  }
+
+  &:active {
+    outline: none;
+  }
 
   &--inactive {
+    opacity: 0.6;
     
+    &:hover {
+      background-color: $accent-one;
+      color: $main-bg;
+      border-color: $accent-two;
+    }
   }
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__text {
+
+  }
+
 }

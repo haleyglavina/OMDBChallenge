@@ -1,0 +1,20 @@
+.noms {
+  &__ul {
+
+  }
+
+  &__li {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  &__poster {
+    width: 200px;
+    filter: grayscale(100%);
+    align-self: center;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+}
