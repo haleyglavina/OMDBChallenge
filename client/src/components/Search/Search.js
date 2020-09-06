@@ -2,9 +2,14 @@ import React from 'react';
 import './Search.scss';
 
 function Search({handleSearchChange}) {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <div className="section__container">
-      <form className="search__form">
+      <form className="search__form" onSubmit={handleSubmit}>
         <div className="search__input-box">
           <input 
             className="search__input" 

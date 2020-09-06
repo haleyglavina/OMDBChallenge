@@ -1,12 +1,9 @@
 import React from 'react';
 import './Results.scss';
 import Movie from '../Movie/Movie';
-import {v4 as uuid} from 'uuid';
 
-function Results({searchInput, currNoms, addNomination, movieLi, setMovieLi}) {
+function Results({searchInput, currNoms, addNomination, movieLi}) {
 
-  //setMovieLi(searchInput ? movieLi.filter(movie => movie.Title.includes(searchInput)) : []);
-  //console.log("movieLi:", movieLi);
   if (!movieLi) {
     return (
       <div className="section__container">
@@ -21,7 +18,7 @@ function Results({searchInput, currNoms, addNomination, movieLi, setMovieLi}) {
       <h2 className="section__title">{`Results for "${searchInput}"`}</h2>
       <ul className="results__ul">
         {movieLi.map(movie => 
-          <li key={uuid()}>
+          <li className="results__li" key={movie.imdbID}>
             <Movie 
               movie={movie} 
               currNoms={currNoms} 

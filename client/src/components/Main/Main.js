@@ -29,8 +29,6 @@ function Main() {
     searchMovies(input)
       .then(res => setMovieLi(res));
   }
-
-
   
   return (
     <main className="main">
