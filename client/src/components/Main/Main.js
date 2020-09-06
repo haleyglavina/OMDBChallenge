@@ -36,6 +36,7 @@ function Main() {
     <main className="main">
       <div className="main__content">
         <h1 className="main__title">The Shoppies.</h1>
+        <h3 className="main__subtitle">Watch. Nominate. Repeat.</h3>
         <div className="main__top-bar">
           <Search handleSearchChange={handleSearchChange}/>
         </div>

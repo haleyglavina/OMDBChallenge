@@ -6,10 +6,13 @@ function Movie({movie, currNoms, clickHandler}) {
   // Movie in nominations section
   if (!currNoms) {
     return (
-      <div className="movie">
-      <p className="movie__text">{`${movie.Title} (${movie.Year})`}</p>
-      <button className="btn" onClick={() => clickHandler(movie)}>Remove</button>
-    </div>
+      <div className="movie movie--noms">
+        <div className="movie__text">
+          <p className="movie__title">{`${movie.Title}`}</p>
+          <p className="movie__year">{`${movie.Year}`}</p>
+          <button className="btn" onClick={() => clickHandler(movie)}>Remove</button>
+        </div>
+      </div>
     );
   }
   
@@ -21,7 +24,10 @@ function Movie({movie, currNoms, clickHandler}) {
 
   return (
     <div className="movie">
-      <p className="movie__text">{`${movie.Title} (${movie.Year})`}</p>
+      <div className="movie__text">
+        <p className="movie__title">{`${movie.Title}`}</p>
+        <p className="movie__year">{`${movie.Year}`}</p>
+      </div>
       {inNominations()
         ? <button className="btn btn--inactive" disabled>Nominate</button>
         : <button className="btn" onClick={() => clickHandler(movie)}>Nominate</button>

@@ -15,7 +15,6 @@ function Results({searchInput, currNoms, addNomination, movieLi, setMovieLi}) {
     </div>
     )
   }
-    
 
   return (
     <div className="section__container">
