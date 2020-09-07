@@ -8,7 +8,7 @@ function Search({handleSearchChange}) {
   }
 
   return (
-    <div className="section__container">
+    <div className="section__container section__container--search">
       <form className="search__form" onSubmit={handleSubmit}>
         <div className="search__input-box">
           <input 

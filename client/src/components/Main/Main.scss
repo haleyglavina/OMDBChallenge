@@ -18,7 +18,6 @@ main * {
   &__content {
     width: 100%;
     max-width: 1080px;
-
   }
 
   &__top-bar {
@@ -41,7 +40,9 @@ main * {
 
   &__sections {
     display: flex;
+    flex-flow: row wrap;
     width: 100%;
+    justify-content: center;
   }
 }
 
@@ -51,10 +52,16 @@ main * {
     border-radius: 4px;
     padding: 1rem;
     margin: 0.5rem;
-    width: 100%;
+    width: calc(50% - 20px);
+    min-width: 310px;
 
-    &--noms {
+    &--search {
+      width: 100%;
 
+      @media (max-width: 659px) {
+        width: 310px;
+        margin: 10px auto;
+      }
     }
   }
 

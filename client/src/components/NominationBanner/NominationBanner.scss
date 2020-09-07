@@ -1,0 +1,19 @@
+@import '../../partials/variables';
+
+.banner {
+  background-color: $main-bg;
+  border-radius: $small-radius;
+  padding: 1rem;
+
+  &__title {
+    color: $accent-one;
+    text-align: center;
+    margin: 0 0 1rem 0;
+  }
+
+  &__description {
+    color: $accent-one;
+    margin: 0;
+    text-align: center;
+  }
+}

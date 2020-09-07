@@ -8,7 +8,9 @@ export const searchMovies = (searchInput) => {
     return axios.get(`${BASIC_URL}?s=${searchInput}&${API_KEY}`)
         .then(res => {
             console.log("res", res)
-            return res.data.Response ? res.data.Search : false
+            return res.data.Response
+                ? res.data.Search.filter(film => film.Type.toLowerCase() === 'movie')
+                : false
         })
         .catch(err => console.log("Search for movies error:", err));
 }

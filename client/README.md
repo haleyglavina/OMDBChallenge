@@ -1,3 +1,35 @@
+//=================================//
+## Considerations for this project //
+//=================================//
+
+Created by Haley Glavina for Shopify, 2020.
+
+Thank you for taking a look at my project! Although the project requirements were my priority when completing this website, I kept some additional things in mind. These include accessibility, efficiency, and some things I enjoy. I will explain how I considered each of these in my code. 
+
+## ACCESSIBILITY
+- I used semantic HTML elements whenever possible (i.e. using ul, li, main, h1, h2, h3, p, form) to ensure screen readers can properly parse my HTML
+- All images include alt properties
+- The website is responsive and looks good at mobile, tablet, and desktop dimensions (so anybody with a screen can use it)
+- Used high contrasting colours between text and background to ensure readability
+- Having contrasting active and hover states for the form and button elements
+
+## EFFICIENCY
+- I chose to implement this project in React to render new movie components efficiently, as well as allow me to reuse code when creating each movie list item in the results and nomination sections. By abstracting the similar (but slightly different) movie types into one component, I reduced code and kept shared styling in a single scss file.
+- Within Movie.js, an early return statement will produce the more-likely to be rendered Result type first, and prevents the need for a second condition to be checked if the Nominations type should be returned instead
+- I used destructuring when handling prop parameters to reduce code
+- Used React hooks and functional components rather than state and class components to reduce code and to easily use setter functions in child components
+
+## THINGS I ENJOY
+- I'm not a designer, but I still enjoy visual design and aesthetic. I went for an Old Hollywood kind of look by sticking with black and white, gold, and a bold serif font
+- Using Sass over vanilla CSS. I really like using Sass, mainly for establishing global styles that can be reused as variables throughout my styling sheets. It makes the styling way easier to update. Nesting also helps logically separate sections of styling in an otherwise flat css file
+- Using React over vanilla JS. Returning jsx rather than manual DOM manipulation is much easier, and it's more efficient to let React turn the virtual DOM into a real one rather than me doing that. I also really like the modularity that React enforces, and the code resuability of repeated components (especially anytime there's a dynamic list of elements like in the movie results and nominations).
+- Flexbox. It's the best, I can't live without it. It's especially handy for making things responsive.
+- I saved the nominations list to local storage instead of session storage so that it would survive tab closures.
+
+//===============================================//
+## create-react-app automated README information //
+//===============================================//
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

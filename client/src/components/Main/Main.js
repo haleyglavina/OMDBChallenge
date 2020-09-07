@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Main.scss';
 import Search from '../Search/Search';
 import Results from '../Results/Results';
@@ -7,7 +7,8 @@ import {searchMovies} from '../../data';
 
 function Main() {
   // Declare state
-  const [currNoms, setCurrNoms] = useState([]);
+  const [currNoms, setCurrNoms] = useState(
+    JSON.parse(window.localStorage.getItem("currNoms")) || []);
   const [movieLi, setMovieLi] = useState(false);
   const [searchInput, setSearchInput] = useState("");
 
@@ -16,6 +17,10 @@ function Main() {
     if (currNoms.length < 5)
       setCurrNoms(currNoms.concat(movie));
   }
+
+  useEffect(() => {
+    window.localStorage.setItem("currNoms", JSON.stringify(currNoms));
+  }, [currNoms])
 
   const removeNomination = (movie) => {
     setCurrNoms(currNoms.filter(nom => 

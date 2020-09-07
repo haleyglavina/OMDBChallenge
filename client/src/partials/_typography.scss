@@ -1,19 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import './variables';
+@import './mixins';
 
 h1 {
   font-family: $accent-font, cursive;
   color: $accent-one;
-  font-size: 3rem;
+  font-size: 2rem;
+
+  @include tablet {
+    font-size: 3rem;
+  }
 }
 
 h2 {
   font-family: $accent-font, cursive;
   letter-spacing: 1.5px;
   color: $main-bg;
+  font-size: 1.5rem;
+
+  @include tablet {
+    font-size: 2rem;
+  }
 }
 
 h3 {
   color: $accent-one;
   font-weight: 100;
+  font-size: 1rem;
+
+  @include tablet {
+    font-size: 2rem;
+  }
+}
+
+p {
+  font-size: 0.8rem;
+
+  @include tablet {
+    font-size: 1rem;
+  }
 }
