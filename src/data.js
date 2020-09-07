@@ -7,7 +7,6 @@ const API_KEY = 'apikey=1d5f927d';
 export const searchMovies = (searchInput) => {
     return axios.get(`${BASIC_URL}?s=${searchInput}&${API_KEY}`)
         .then(res => {
-            console.log("res", res)
             return res.data.Response
                 ? res.data.Search.filter(film => film.Type.toLowerCase() === 'movie')
                 : false
