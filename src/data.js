@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASIC_URL = 'http://www.omdbapi.com/';
+const BASIC_URL = 'https://www.omdbapi.com/';
 const API_KEY = 'apikey=1d5f927d';
 
 // Get movies using search input
